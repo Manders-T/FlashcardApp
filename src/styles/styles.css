@@ -1,0 +1,106 @@
+body {
+    background-color: bisque;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 55px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    overflow: hidden;
+}
+
+h2 {
+    padding-top: 30px;
+    font-size:50px
+}
+
+#card-div {
+    background-color: ivory;
+    max-width: 800px;
+    min-height: 300px;
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+    border-radius: 10px;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+#button-div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#next_action {
+    animation: pulse 2s infinite;
+}
+
+#add-words-div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    color: white;
+    border: solid 2 blue;
+    border-radius: 5px;
+    min-width: 150px;
+    min-height: 50px;
+    vertical-align: middle;
+}
+
+input {
+    min-height: 30px;
+    max-width: 300px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-radius: 5px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+#french-images {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-shrink: 1;
+    justify-content: center;
+    gap: 16px;
+    width: auto;
+    margin: auto;
+    padding: 20px 10px;
+}
+
+img {
+    border-radius: 25px;
+    max-width: 45%;
+    height: auto;
+}

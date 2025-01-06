@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
-</head>
-
-<body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <h1>Isabelle's Flashcard App</h1>
+    <div id="card-div">
+      <h2 id="card_title">French Word:</h2>
+      <p id="current_word">Word to learn</p>
+    </div>
+    <div id="button-div">
+      <button id="next_action" type="button">Press to start</button>
+      <button id="translate" type="button" disabled>Reveal translation</button>
+    </div>
+    <div id="add-words-div">
+      <input type="text" id="new-french-word" placeholder="New french word"/>
+      <input type="text" id="new-english-word" placeholder="English translation"/>
+    </br>
+      <button id="add-words" type="button">Add to list</button>
+      <button id="reset-list" type="button">Reset list</button>
+    </div>
+    <div id="french-images">
+      <img src="./images/SpeakFrench.jpg" />
+      <img src="./images/FrenchFlag.webp" />
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>
