@@ -28,7 +28,7 @@ actionButton.addEventListener('click', () => {
     document.getElementById('card-div').style.visibility = 'visible';
     translateButton.disabled = false;
     actionButton.innerText = 'Next';
-    if (actionButton.getAnimations().length === 0) {
+    if (actionButton.getAnimations().length !== 0) {
       actionButton.getAnimations()[0].cancel();
     }
     counter++;
