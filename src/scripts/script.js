@@ -47,6 +47,10 @@ addToList.addEventListener('click', () => {
     } else if (newFrenchWord.value == "" || newEnglishWord.value == "") {
         alert("Make sure both boxes are filled out!")
     } else {
+      if (frenchWordsArray.toString() === defaultFrenchWordsArray.toString()) {
+        frenchWordsArray = [];
+        englishTranslationArray = [];
+      }
       frenchWordsArray.push(newFrenchWord.value);
       englishTranslationArray.push(newEnglishWord.value);
       localStorage.setItem("frenchWords", JSON.stringify(frenchWordsArray))
