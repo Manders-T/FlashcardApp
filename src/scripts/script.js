@@ -10,6 +10,7 @@ let newFrenchWord = document.getElementById('new-french-word');
 let newEnglishWord = document.getElementById('new-english-word');
 let resetList = document.getElementById('reset-list');
 let counter = 0;
+let currentPosition = 0;
 
 let frenchWordsArray = JSON.parse(localStorage.getItem("frenchWords"))
 if (frenchWordsArray === null) {
@@ -21,8 +22,12 @@ if (englishTranslationArray === null) {
     englishTranslationArray = defaultEnglishTranslationArray.slice(0);
 }
 
-function getRandomInteger() {
-  return Math.floor(Math.random() * frenchWordsArray.length);
+function getRandomInteger(checkPosition) {
+  let newPostion;
+  do {
+  newPostion = Math.floor(Math.random() * frenchWordsArray.length);
+  } while (checkPosition === newPostion)
+  return newPostion;
 }
 
 actionButton.addEventListener('click', () => {
@@ -31,7 +36,7 @@ actionButton.addEventListener('click', () => {
     if (frenchWordsArray.length < 5) {
       wordArrayPosition = counter % frenchWordsArray.length;
     } else {
-      wordArrayPosition = getRandomInteger();
+      wordArrayPosition = getRandomInteger(currentPosition);
     }
     currentWord.innerText = frenchWordsArray[wordArrayPosition];
     document.getElementById('card-div').style.visibility = 'visible';
@@ -41,6 +46,7 @@ actionButton.addEventListener('click', () => {
       actionButton.getAnimations()[0].cancel();
     }
     counter++;
+    currentPosition = wordArrayPosition;
 })
 
 translateButton.addEventListener('click', () => {
