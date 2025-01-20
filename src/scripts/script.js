@@ -13,6 +13,17 @@ const optionToggle = document.getElementById('option')
 let counter = 0;
 let currentPosition = 0;
 
+let storedOption = localStorage.getItem("option");
+switch (storedOption) {
+  case null:
+    storedOption = "frenchToEnglish";
+    localStorage.setItem("option", storedOption);
+    break;
+  case "englishToFrench":
+    optionToggle.checked = true;
+    break;
+}
+
 let frenchWordsArray = JSON.parse(localStorage.getItem("frenchWords"))
 if (frenchWordsArray === null) {
     frenchWordsArray = defaultFrenchWordsArray.slice(0);
@@ -83,4 +94,14 @@ resetList.addEventListener('click', () => {
     console.log(frenchWordsArray);
     englishTranslationArray = defaultEnglishTranslationArray.slice(0);
     localStorage.clear();
+})
+
+optionToggle.addEventListener('change', () => {
+  if (optionToggle.checked === true && storedOption !== "englishToFrench") {
+    storedOption = "englishToFrench";
+    localStorage.setItem("option", storedOption);
+  } else if (optionToggle.checked === false && storedOption !== "frenchToEnglish") {
+    storedOption = "frenchToEnglish";
+    localStorage.setItem("option", storedOption);
+  }
 })
