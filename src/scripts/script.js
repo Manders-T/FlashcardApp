@@ -42,30 +42,48 @@ function getRandomInteger(checkPosition) {
   return newPostion;
 }
 
-actionButton.addEventListener('click', () => {
+function takeAction () {
+    
+  let wordArrayPosition;
+  if (frenchWordsArray.length < 5) {
+    wordArrayPosition = counter % frenchWordsArray.length;
+  } else {
+    wordArrayPosition = getRandomInteger(currentPosition);
+  }
+
+  if (storedOption === "englishToFrench") {
+    cardTitle.innerText = 'English Word:';
+    currentWord.innerText = englishTranslationArray[wordArrayPosition];
+  } else {
     cardTitle.innerText = 'French Word:';
-    let wordArrayPosition;
-    if (frenchWordsArray.length < 5) {
-      wordArrayPosition = counter % frenchWordsArray.length;
-    } else {
-      wordArrayPosition = getRandomInteger(currentPosition);
-    }
     currentWord.innerText = frenchWordsArray[wordArrayPosition];
-    //document.getElementById('card-div').style.visibility = 'visible';
-    document.getElementById('card-div').style.display = 'block';
-    translateButton.disabled = false;
-    actionButton.innerText = 'Next';
-    if (actionButton.getAnimations().length !== 0) {
-      actionButton.getAnimations()[0].cancel();
-    }
-    counter++;
-    currentPosition = wordArrayPosition;
-})
+  }
+
+  //document.getElementById('card-div').style.visibility = 'visible';
+  document.getElementById('card-div').style.display = 'block';
+  translateButton.disabled = false;
+  actionButton.innerText = 'Next';
+  if (actionButton.getAnimations().length !== 0) {
+    actionButton.getAnimations()[0].cancel();
+  }
+  counter++;
+  currentPosition = wordArrayPosition;
+}
+
+actionButton.addEventListener('click', takeAction);
 
 translateButton.addEventListener('click', () => {
-    cardTitle.innerText = 'English Translation:';
-    let wordArrayPosition = frenchWordsArray.indexOf(currentWord.innerText);
-    currentWord.innerText = englishTranslationArray[wordArrayPosition];
+    let wordArrayPosition;
+    if (storedOption === "englishToFrench"){
+      cardTitle.innerText = 'French Translation:';
+      wordArrayPosition = englishTranslationArray.indexOf(currentWord.innerText);
+      currentWord.innerText = frenchWordsArray[wordArrayPosition];
+    } else {
+      cardTitle.innerText = 'English Translation:';
+      wordArrayPosition = frenchWordsArray.indexOf(currentWord.innerText);
+      currentWord.innerText = englishTranslationArray[wordArrayPosition];
+    }
+    
     translateButton.disabled = true;
 })
 
@@ -104,4 +122,5 @@ optionToggle.addEventListener('change', () => {
     storedOption = "frenchToEnglish";
     localStorage.setItem("option", storedOption);
   }
+  takeAction();
 })
