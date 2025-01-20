@@ -39,7 +39,8 @@ actionButton.addEventListener('click', () => {
       wordArrayPosition = getRandomInteger(currentPosition);
     }
     currentWord.innerText = frenchWordsArray[wordArrayPosition];
-    document.getElementById('card-div').style.visibility = 'visible';
+    //document.getElementById('card-div').style.visibility = 'visible';
+    document.getElementById('card-div').style.display = 'block';
     translateButton.disabled = false;
     actionButton.innerText = 'Next';
     if (actionButton.getAnimations().length !== 0) {
