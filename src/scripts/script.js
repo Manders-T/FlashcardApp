@@ -1,14 +1,15 @@
 const defaultFrenchWordsArray = ["Bonjour", "Au revoir", "J'adore"];
 const defaultEnglishTranslationArray = ["Hello", "Goodbye", "I love"];
 
-let actionButton = document.getElementById('next_action');
-let translateButton = document.getElementById('translate');
-let currentWord = document.getElementById('current_word');
-let cardTitle = document.getElementById('card_title');
-let addToList = document.getElementById('add-words');
-let newFrenchWord = document.getElementById('new-french-word');
-let newEnglishWord = document.getElementById('new-english-word');
-let resetList = document.getElementById('reset-list');
+const actionButton = document.getElementById('next_action');
+const translateButton = document.getElementById('translate');
+const currentWord = document.getElementById('current_word');
+const cardTitle = document.getElementById('card_title');
+const addToList = document.getElementById('add-words');
+const newFrenchWord = document.getElementById('new-french-word');
+const newEnglishWord = document.getElementById('new-english-word');
+const resetList = document.getElementById('reset-list');
+const optionToggle = document.getElementById('option')
 let counter = 0;
 let currentPosition = 0;
 
