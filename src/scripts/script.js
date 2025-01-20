@@ -21,9 +21,18 @@ if (englishTranslationArray === null) {
     englishTranslationArray = defaultEnglishTranslationArray.slice(0);
 }
 
+function getRandomInteger() {
+  return Math.floor(Math.random() * frenchWordsArray.length);
+}
+
 actionButton.addEventListener('click', () => {
     cardTitle.innerText = 'French Word:';
-    let wordArrayPosition = counter % frenchWordsArray.length;
+    let wordArrayPosition;
+    if (frenchWordsArray.length < 5) {
+      wordArrayPosition = counter % frenchWordsArray.length;
+    } else {
+      wordArrayPosition = getRandomInteger();
+    }
     currentWord.innerText = frenchWordsArray[wordArrayPosition];
     document.getElementById('card-div').style.visibility = 'visible';
     translateButton.disabled = false;
