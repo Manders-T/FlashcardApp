@@ -109,8 +109,8 @@ addToList.addEventListener('click', () => {
         englishTranslationArray = [];
       }
       //Add the words to the arrays and set in local storage
-      frenchWordsArray.push(newFrenchWord.value);
-      englishTranslationArray.push(newEnglishWord.value);
+      frenchWordsArray.push(newFrenchWord.value.trim());
+      englishTranslationArray.push(newEnglishWord.value.trim());
       localStorage.setItem("frenchWords", JSON.stringify(frenchWordsArray))
       localStorage.setItem("englishWords", JSON.stringify(englishTranslationArray))
     }
