@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
-    <h1>Isabelle's Flashcard App</h1>
+    <h1>Flashcard App</h1>
+    <div id="language-div">
+      <select id="language" name="language">
+        <option value="FR">French</option>
+        <option value="SP">Spanish</option>
+      </select>
+    </div>
     <div id="options-div">
-      <p class="options">French to English</p>
+      <p class="options" id="opt1"></p>
       <label class="switch">
         <input type="checkbox" id="option">
         <span class="slider round"></span>
       </label>
-      <p class="options">English to French</p>
+      <p class="options" id="opt2"></p>
     </div>
     <br>
     <div id="card-div">
@@ -26,7 +32,7 @@
       <button id="translate" type="button" disabled>Reveal translation</button>
     </div>
     <div id="add-words-div">
-      <input type="text" id="new-french-word" placeholder="New french word"/>
+      <input type="text" id="new-foreign-word"/>
       <input type="text" id="new-english-word" placeholder="English translation"/>
     </br>
       <button id="add-words" type="button">Add to list</button>

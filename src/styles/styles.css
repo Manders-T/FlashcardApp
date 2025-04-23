@@ -86,6 +86,10 @@ input {
     padding-left: 10px;
 }
 
+select, input {
+  background-color: ivory;
+}
+
 #french-images {
     display: flex;
     flex-wrap: wrap;
@@ -174,6 +178,12 @@ img {
     display: flex;
     float: right;
     margin-right: 5px;
+  }
+
+  #language-div {
+    display: flex;
+    float: left;
+    margin-left: 5px;
   }
 
 .options {
