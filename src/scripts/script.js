@@ -207,6 +207,7 @@ languageSelector.addEventListener('change', () => {
       localStorage.setItem('language', languageOption);
       newForeignWord.placeholder = "New French word";
       cardTitle.innerText = "French word:";
+      foreignWordsArray = defaultFrenchWordsArray.slice(0);
       foreignToEnglish.innerText = "French to English";
       englishToForeign.innerText = "English to French";
       flagImage.src = frenchFlag;
@@ -216,6 +217,7 @@ languageSelector.addEventListener('change', () => {
       localStorage.setItem('language', languageOption);
       newForeignWord.placeholder = "New Spanish word";
       cardTitle.innerText = "Spanish word:";
+      foreignWordsArray = defaultSpanishWordsArray.slice(0);
       foreignToEnglish.innerText = "Spanish to English";
       englishToForeign.innerText = "English to Spanish";
       flagImage.src = spanishFlag;
